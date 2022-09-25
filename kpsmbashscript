@@ -1,0 +1,10 @@
+pwd
+ls -la
+cd target
+ls -la
+cd ../
+
+docker build -t webapp:1.0.0 .
+docker tag webapp:1.0.0 kpsmregistry.azurecr.io/webapp:1.0.0
+docker login kpsmregistry.azurecr.io -u kpsmregistry  -p NOc76PGP4=fIe7ts8ZtEqpQwHoLJ3Chd
+docker push webapp:1.0.0 kpsmregistry.azurecr.io/webapp:1.0.0
